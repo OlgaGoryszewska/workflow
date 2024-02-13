@@ -2,8 +2,8 @@ describe("Authentication", () => {
   it("should log in with valid credentials", () => {
     cy.visit("/");
 
-    cy.get('input[name="email"]').type("valid_email@example.com");
-    cy.get('input[name="password"]').type("validpassword");
+    cy.get('input[name="email"]').type("olga.goryszewska@gmail.com");
+    cy.get('input[name="password"]').type("Test123456");
 
     cy.get("form").submit();
 
@@ -15,8 +15,8 @@ describe("Authentication", () => {
   it("should show error message for invalid credentials", () => {
     cy.visit("http://127.0.0.1:5500/index.html");
 
-    cy.get('input[name="email"]').type("invalid_email@example.com");
-    cy.get('input[name="password"]').type("invalidpassword");
+    cy.get('input[name="email"]').type("olga.goryszewska@gmail.com");
+    cy.get('input[name="password"]').type("Test123456");
 
     cy.get("form").submit();
 
@@ -25,8 +25,8 @@ describe("Authentication", () => {
 
   it("should log out successfully", () => {
     cy.visit("http://127.0.0.1:5500/index.html");
-    cy.get('input[name="email"]').type("valid_email@example.com");
-    cy.get('input[name="password"]').type("validpassword");
+    cy.get('input[name="email"]').type("olga.goryszewska@gmail.com");
+    cy.get('input[name="password"]').type("Test123456");
     cy.get("form").submit();
 
     cy.url().should("include", "/dashboard");
