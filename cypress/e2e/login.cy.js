@@ -1,6 +1,6 @@
 describe("Authentication", () => {
   it("should log in with valid credentials", () => {
-    cy.visit("http://127.0.0.1:5500/index.html");
+    cy.visit("/");
 
     cy.get('input[name="email"]').type("valid_email@example.com");
     cy.get('input[name="password"]').type("validpassword");
